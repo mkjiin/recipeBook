@@ -4,6 +4,7 @@ import { Subject, combineLatest } from 'rxjs';
 
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
+  activeRecipe: Recipe;
 
   private _recipes: Recipe[] = [
     new Recipe(
@@ -42,6 +43,11 @@ export class RecipeService {
 
   updateRecipe(index: number, newRecipe: Recipe) {
     this._recipes[index - 1] = newRecipe;
+    this.recipesChanged.next(this._recipes.slice());
+  }
+
+  deleteRecipe(id: number) {
+    this._recipes = this._recipes.filter((el) => el.id !== id);
     this.recipesChanged.next(this._recipes.slice());
   }
 }
