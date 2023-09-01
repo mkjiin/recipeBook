@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'header-component',
@@ -6,9 +7,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  @Output('nav') navBarStateChanged = new EventEmitter<string>();
+  constructor(private router: Router) {}
 
-  onSetNavBarState(state: string) {
-    this.navBarStateChanged.emit(state);
-  }
+  // onSetLink(state: string) {
+  //   if (state === 'recipes') {
+  //     this.router.navigate(['recipes']);
+  //   }
+  //   if (state === 'shoppingList') {
+  //     this.router.navigate(['shopping-list']);
+  //   }
+  // }
 }

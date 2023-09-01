@@ -1,11 +1,12 @@
-<header-component (nav)="onNavStatusAdded($event)"></header-component>
+<header-component></header-component>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipe *ngIf="navBarState === 'Recipes'"></app-recipe>
+      <!-- <app-recipe *ngIf="navBarState === 'Recipes'"></app-recipe>
       <app-shopping-list
         *ngIf="navBarState === 'Shopping List'"
-      ></app-shopping-list>
+      ></app-shopping-list> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

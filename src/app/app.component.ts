@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'recipebook';
-  navBarState: string = 'Recipes';
-
-  onNavStatusAdded(event: string) {
-    this.navBarState = event;
-  }
 }
